@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-
+import 'package:intl/intl.dart';
 class CalendarWidget extends StatefulWidget {
   CalendarWidget({Key key, this.title}) : super(key: key);
 
@@ -123,46 +123,15 @@ class _CalendarWidgetState extends State<CalendarWidget>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
+          CustomCalendarHeader(headerDate: DateTime.now()),
           _buildTableCalendarWithBuilders(),
           // const SizedBox(height: 8.0),
           Expanded(child: _buildEventList()),
         ],
-      ),
-    );
-  }
-
-  // Simple TableCalendar configuration (using Styles)
-  Widget _buildTableCalendar() {
-    return Container(
-      color: Colors.black,
-      child: TableCalendar(
-        calendarController: _calendarController,
-        events: _events,
-        startingDayOfWeek: StartingDayOfWeek.monday,
-        calendarStyle: CalendarStyle(
-          todayColor: Colors.amber,
-          markersPositionBottom: -6,
-          todayStyle: TextStyle(color: Colors.white),
-          weekdayStyle: TextStyle(color: Colors.white),
-          weekendStyle: TextStyle(color: Colors.white),
-          outsideStyle: TextStyle(color: Colors.grey.shade900),
-          unavailableStyle: TextStyle(color: Colors.grey.shade900),
-          outsideWeekendStyle: TextStyle(color: Colors.grey.shade900),
-        ),
-        headerStyle: HeaderStyle(
-          formatButtonTextStyle:
-              TextStyle().copyWith(color: Colors.white, fontSize: 15.0),
-          formatButtonDecoration: BoxDecoration(
-            color: Colors.deepOrange[400],
-            borderRadius: BorderRadius.circular(16.0),
-          ),
-        ),
-        onDaySelected: _onDaySelected,
-        onVisibleDaysChanged: _onVisibleDaysChanged,
-        onCalendarCreated: _onCalendarCreated,
       ),
     );
   }
@@ -172,7 +141,8 @@ class _CalendarWidgetState extends State<CalendarWidget>
     return Container(
       color: Colors.black,
       child: TableCalendar(
-        // locale: 'pl_PL',
+        locale: 'en_US',
+        
         headerVisible: true,
 
         startingDayOfWeek: StartingDayOfWeek.monday,
@@ -183,7 +153,9 @@ class _CalendarWidgetState extends State<CalendarWidget>
         availableGestures: AvailableGestures.all,
         availableCalendarFormats: const {
           CalendarFormat.month: '',
+          CalendarFormat.twoWeeks: '',
           CalendarFormat.week: '',
+          
         },
         calendarStyle: CalendarStyle(
           contentPadding: EdgeInsets.only(bottom: 10),
@@ -192,18 +164,26 @@ class _CalendarWidgetState extends State<CalendarWidget>
           todayColor: Colors.white,
           highlightToday: true,
           markersColor: Colors.amberAccent,
+          // renderDaysOfWeek: false,
+          weekendStyle: TextStyle().copyWith(color: Colors.blue),
           todayStyle: TextStyle().copyWith(color: Colors.white),
-          weekendStyle: TextStyle().copyWith(color: Colors.blue[800]),
+          // weekendStyle: TextStyle().copyWith(color: Colors.blue[800]),
           holidayStyle: TextStyle().copyWith(color: Colors.blue[800]),
         ),
 
-        // daysOfWeekStyle: DaysOfWeekStyle(
-        //   weekendStyle: TextStyle().copyWith(color: Colors.blue[600]),
-        // ),
+        daysOfWeekStyle: DaysOfWeekStyle(
+          dowTextBuilder: (date, locale) => DateFormat.E().format(date)[0 ],
+          weekendStyle: TextStyle().copyWith(color: Colors.blue[600]),
+        ),
         headerStyle: HeaderStyle(
             centerHeaderTitle: true,
             formatButtonVisible: false,
-            decoration: BoxDecoration(color: Colors.white)),
+            decoration: BoxDecoration(color: Colors.black),
+            titleTextStyle: TextStyle(
+              color: Colors.white
+              
+            )
+            ),
 
         builders: CalendarBuilders(
           dayBuilder: (context, date, events) {
@@ -442,3 +422,25 @@ class _CalendarWidgetState extends State<CalendarWidget>
   }
 }
 
+class CustomCalendarHeader extends StatelessWidget {
+  final DateTime headerDate;
+
+  const CustomCalendarHeader({
+    Key key,
+    @required this.headerDate,
+  })  : assert(headerDate != null),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: Text(
+          DateFormat.yMMMM().format(headerDate),
+          style: TextStyle(fontSize: 20.0),
+        ),
+      ),
+    );
+  }
+}

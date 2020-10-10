@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-Widget dropDownUI(String selectedValue, List<String> dropDownValues,State state) {
+Widget dropDownUI(
+    String selectedValue, List<String> dropDownValues, State state) {
   return Container(
     margin: EdgeInsets.all(10),
     child: DropdownButton<String>(
@@ -10,9 +11,8 @@ Widget dropDownUI(String selectedValue, List<String> dropDownValues,State state)
       value: selectedValue,
       onChanged: (String newValue) {
         state.setState(() {
-                 selectedValue = newValue;
-                });
-        
+          selectedValue = newValue;
+        });
       },
       items: dropDownValues.map((String dropValue) {
         return new DropdownMenuItem<String>(
@@ -34,18 +34,73 @@ Widget dropDownUI(String selectedValue, List<String> dropDownValues,State state)
 Widget textFieldUI(TextEditingController textController) {
   return TextFormField(
     controller: textController,
+    // initialValue: "55",
     textInputAction: TextInputAction.go,
+    // keyboardType: inputk,
     decoration:
         InputDecoration(labelText: 'Text Field', fillColor: Colors.amber),
   );
 }
+
 Widget textFieldAreaUI(TextEditingController textController) {
   return TextFormField(
     controller: textController,
     textInputAction: TextInputAction.go,
-    minLines: 4,
-    maxLines: 4,
+    minLines: 2,
+    maxLines: 3,
     decoration:
         InputDecoration(labelText: 'Text Area', fillColor: Colors.amber),
+  );
+}
+
+class DemoSelected {
+  bool selected;
+  String name;
+
+  DemoSelected(bool selected, String name) {
+    this.selected = selected;
+    this.name = name;
+  }
+}
+
+Widget collasibleOptionChoose(List<DemoSelected> demoList) {
+  return Container(
+    margin: EdgeInsets.all(10),
+    child: Card(
+      elevation: 9,
+      child: ExpansionTile(
+        title: Text('Collapsible Choose Menu'),
+        leading: Icon(Icons.local_pizza),
+        trailing: Icon(Icons.expand_more),
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              ListView.builder(
+                  itemCount: demoList.length,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext contex, int index) {
+                    return Container(
+                      margin: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Checkbox(
+                            value: demoList[index].selected,
+                            onChanged: (value) {
+                              setState() {
+                                demoList[index].selected = value;
+                              }
+                            },
+                          ),
+                          Text('${demoList[index].name}'),
+                        ],
+                      ),
+                    );
+                  }),
+            ],
+          ),
+        ],
+      ),
+    ),
   );
 }
