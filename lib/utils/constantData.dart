@@ -13,14 +13,25 @@ RegExp mobileRegex = new RegExp(r'(^(?:[+0]9)?[0-9]{10,12}$)');
 
 List<Category> categoryList = List<Category>();
 
-
 Widget companyLogo(String url, double height, double width) {
-  return FadeInImage(
-    height: height,
-    width: width,
-    image: NetworkImage(url),
-    placeholder: AssetImage("assets/images/default-image.jpg"),
-    fit: BoxFit.scaleDown,
+  return ClipRRect(
+    child: Image.network(
+      url,
+      height: height,
+      width: width,
+      fit: BoxFit.cover,
+    ),
+    borderRadius: BorderRadius.circular(8.0),
+  );
+
+  Container(
+    child: FadeInImage(
+      height: height,
+      width: width,
+      image: NetworkImage(url),
+      placeholder: AssetImage("assets/images/default-image.jpg"),
+      fit: BoxFit.cover,
+    ),
   );
 }
 
@@ -73,8 +84,7 @@ Widget toastFunstion(BuildContext context, String msg) {
   )..show(context);
 }
 
-
-var cricketerList=""" [
+var cricketerList = """ [
  {
    "Name": "Amar Singh",
    "First": 1932,

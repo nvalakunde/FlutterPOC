@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_poc/CSS/Colors.dart';
+import 'package:flutter_poc/responsivescreen/responsive.dart';
 
 Widget dropDownUI(
     String selectedValue, List<String> dropDownValues, State state) {
@@ -31,14 +33,26 @@ Widget dropDownUI(
   );
 }
 
-Widget textFieldUI(TextEditingController textController) {
-  return TextFormField(
-    controller: textController,
-    // initialValue: "55",
-    textInputAction: TextInputAction.go,
-    // keyboardType: inputk,
-    decoration:
-        InputDecoration(labelText: 'Text Field', fillColor: Colors.amber),
+Widget textFieldUI(TextEditingController textController, {String fieldName}) {
+  return Container(
+    margin: EdgeInsets.all(setHeight(10)),
+    decoration: ShapeDecoration(
+      shape: RoundedRectangleBorder(
+        side: BorderSide(
+            width: 2.0, style: BorderStyle.solid, color: themeColorBlue),
+        borderRadius: BorderRadius.all(
+          Radius.circular(5.0),
+        ),
+      ),
+    ),
+    child: TextFormField(
+      controller: textController,
+      // initialValue: "55",
+      textInputAction: TextInputAction.go,
+      // keyboardType: inputk,
+      decoration:
+          InputDecoration(labelText: fieldName, fillColor: Colors.amber),
+    ),
   );
 }
 

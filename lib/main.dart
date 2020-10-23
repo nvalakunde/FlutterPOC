@@ -3,10 +3,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_poc/CSS/Colors.dart';
+import 'package:flutter_poc/CSS/textcss.dart';
 import 'package:flutter_poc/Stateful_Widgets/checkboxcombo.dart';
 import 'package:flutter_poc/Stateful_Widgets/passwordwidget.dart';
 import 'package:flutter_poc/alertwidgets/show_dialog.dart';
 import 'package:flutter_poc/analyticsandchart/charts.dart';
+import 'package:flutter_poc/carosal/formui.dart';
 import 'package:flutter_poc/cascadedropdown/cascadeui.dart';
 import 'package:flutter_poc/colorchoose/colorchooseui.dart';
 import 'package:flutter_poc/datetimecal.dart/datepicker.dart';
@@ -102,9 +104,45 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("FLUTTER POC"),
       ),
+      drawer: Drawer(
+        child: Container(
+          margin: EdgeInsets.all(20),
+          child: gridUI(10),
+        ),
+      ),
       body: ListView(
         shrinkWrap: true,
         children: <Widget>[
+          // Container(
+          //   width: 100,
+          //   height: 100,
+          //   decoration: BoxDecoration(
+          //     image: DecorationImage(
+          //       fit: BoxFit.contain,
+          //       image: NetworkImage("https://picsum.photos/250?image=9"),
+          //     ),
+          //   ),
+          // ),
+          // Container(
+          //   width: 100,
+          //   height: 100,
+          //   decoration: BoxDecoration(
+          //     image: DecorationImage(
+          //       fit: BoxFit.fitHeight,
+          //       image: NetworkImage(
+          //           "https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg"),
+          //     ),
+          //   ),
+          // ),
+          // ClipRRect(
+          //   child: Image.network(
+          //     'https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg',
+          //     height: 100.0,
+          //     width: 100.0,
+          //     fit: BoxFit.contain,
+          //   ),
+          //   borderRadius: BorderRadius.circular(8.0),
+          // ),
           Container(
             // margin: EdgeInsets.only(top: 10),
             child: companyLogo(
@@ -113,21 +151,39 @@ class _MyHomePageState extends State<MyHomePage> {
               150,
             ),
           ),
-          textFieldUI(myText1),
+          Padding(padding: EdgeInsets.all(10), child: textFieldUI(myText1)),
           textFieldAreaUI(myText2),
-          RaisedButton(
-            color: themeColorBlue,
-            onPressed: () {
-              showMaterialDialog(context);
-            },
-            child: Text('Show Material Dialog'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              showCupertinoDialog(context);
-            },
-            child: Text('Show Cupertino Dialog'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                  icon: Icon(Icons.dialpad),
+                  onPressed: () {
+                    showMaterialDialog(context);
+                  }),
+              RaisedButton(
+                color: themeColorBlue,
+                onPressed: () {
+                  showMaterialDialog(context);
+                },
+                child: Text(
+                  'Material Dialog',
+                  style: txtStyle(12, whiteColor),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                child: RaisedButton(
+                  color: themeColorYellow,
+                  onPressed: () {
+                    showCupertinoDialog(context);
+                  },
+                  child: Text('Cupertino Dialog'),
+                ),
+              ),
+            ],
           ),
 
           RaisedButton(
@@ -260,174 +316,174 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SignaturePad(),
-                ),
-              );
-            },
-            child: Text('SignaturePad'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CascadeUI(),
-                ),
-              );
-            },
-            child: Text('Cascade Choise UI'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ChooseColorUI(),
-                ),
-              );
-            },
-            child: Text('Color Choose UI'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ImagePickerUI(),
-                ),
-              );
-            },
-            child: Text('ImagePickerUI'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Login(),
-                ),
-              );
-            },
-            child: Text('LoginSignup UI'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => QRCodeUI(),
-                ),
-              );
-            },
-            child: Text('QRCodeUI'),
-          ),
-          Container(
-              // child:GestureDetector(
-              // key: _gestureDetectorKey,
-              // onHorizontalDragUpdate: _move,
-              // onHorizontalDragEnd: _settle,
-              // behavior: HitTestBehavior.translucent,
-              // excludeFromSemantics: true,
-              // dragStartBehavior: widget.dragStartBehavior,
-              // child: Container(width: dragAreaWidth),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignaturePad(),
+                    ),
+                  );
+                },
+                child: Text('SignaturePad'),
               ),
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ApplicationForm(),
+                    ),
+                  );
+                },
+                child: Text('FragmentUI'),
+              ),
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CascadeUI(),
+                    ),
+                  );
+                },
+                child: Text('Cascade Choise UI'),
+              ),
+            ],
+          ),
 
-          // GestureDetector(
-          //   onHorizontalDragUpdate: (DragUpdateDetails details) {
-          //     //* User dragged only from left to right of screen
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChooseColorUI(),
+                    ),
+                  );
+                },
+                child: Text('Color Choose UI'),
+              ),
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ImagePickerUI(),
+                    ),
+                  );
+                },
+                child: Text('ImagePickerUI'),
+              ),
+              
+            ],
+          ),
 
-          //     if (_dragDownOffset.dx < 60.0 && details.delta.dx > 0) {
-          //       //  Navigator.push(context, NavigateDrawerUI(previousPage: null, builder: (context) => AmplifyMapsFeature()));
-          //       //   Navigator.of(context).push(
-          //       //     AmplifyPageRoute(
-          //       //       page: () => AmplifyMapsFeature(),
-          //       //       transition: Transition.leftToRight,
-          //       //       transitionDuration: Duration(milliseconds: 600),
-          //       //     ),
-          //       //   );
-          //     }
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QRCodeUI(),
+                    ),
+                  );
+                },
+                child: Text('QRCodeUI'),
+              ),
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NavigateDrawerUI(),
+                    ),
+                  );
+                },
+                child: Text('NavigateDrawerUI'),
+              ),
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FileAttachUI(),
+                    ),
+                  );
+                },
+                child: Text('FileAttachUI'),
+              ),
+            ],
+          ),
 
-          //     //! This [onHorizontalDragUpdate] overrides changing tabs on swipe
-          //     //TODO Add callback methods to change tabs.
-          //   },
-          //   onPanDown: (DragDownDetails details) {
-          //     setState(() {
-          //       _dragDownOffset = details.localPosition;
-          //     });
-          //   },
-          //   child: Container(),
-          // ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => NavigateDrawerUI(),
-                ),
-              );
-            },
-            child: Text('NavigateDrawerUI'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChartUI(),
+                    ),
+                  );
+                },
+                child: Text('ChartUI'),
+              ),
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TaskHome(),
+                    ),
+                  );
+                },
+                child: Text('TaskHome'),
+              ),
+              RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SettingUI(),
+                    ),
+                  );
+                },
+                child: Text('SettingUI'),
+              ),
+            ],
           ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FileAttachUI(),
-                ),
-              );
-            },
-            child: Text('FileAttachUI'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ChartUI(),
-                ),
-              );
-            },
-            child: Text('ChartUI'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => TaskHome(),
-                ),
-              );
-            },
-            child: Text('TaskHome'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SettingUI(),
-                ),
-              );
-            },
-            child: Text('SettingUI'),
-          ),
+RaisedButton(
+                color: themeColorYellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Login(),
+                    ),
+                  );
+                },
+                child: Text('LoginSignup UI'),
+              ),
           RaisedButton(
             color: themeColorYellow,
             onPressed: () {
