@@ -200,6 +200,90 @@ class _SQFLiteDemoState extends State<SQFLiteDemo> {
     );
   }
 
+  Widget buildUpdateChildUI(int id,String name, String age) {
+    TextEditingController myChildrensName = TextEditingController();
+    TextEditingController myChildrensAge = TextEditingController();
+    myChildrensName.text = name;
+    myChildrensAge.text = age;
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.all(setHeight(10)),
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                        width: 2.0,
+                        style: BorderStyle.solid,
+                        color: themeColorBlue),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5.0),
+                    ),
+                  ),
+                ),
+                child: TextFormField(
+                  controller: myChildrensName,
+                  textInputAction: TextInputAction.go,
+                  decoration: InputDecoration(
+                      labelText: "   Name", fillColor: Colors.amber),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.all(setHeight(10)),
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                        width: 2.0,
+                        style: BorderStyle.solid,
+                        color: themeColorBlue),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5.0),
+                    ),
+                  ),
+                ),
+                child: TextFormField(
+                  controller: myChildrensAge,
+                  textInputAction: TextInputAction.go,
+                  decoration: InputDecoration(
+                      labelText: "   Age", fillColor: Colors.amber),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: RaisedButton(
+            color: themeColorBlue,
+            onPressed: () {
+              if (myChildrensName.text.trim() != "" &&
+                  myChildrensAge.text.trim() != "") {
+                setState(() {
+                  _update(id,myChildrensName.text.trim(),
+                      int.parse(myChildrensAge.text.trim()));
+                });
+              } else {
+                toastFunstion(context, "Insert Name & Age");
+              }
+            },
+            child: Text(
+              "Insert Data",
+              style: txtStyle(12, whiteColor),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
   Widget buildChildUI(int index) {
     myChildrensNames[index] = TextEditingController();
     myChildrensAges[index] = TextEditingController();

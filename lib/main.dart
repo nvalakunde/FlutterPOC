@@ -490,19 +490,7 @@ RaisedButton(
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PDFOperationUI(),
-                ),
-              );
-            },
-            child: Text('PDFOperationUI'),
-          ),
-          RaisedButton(
-            color: themeColorYellow,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PDFPrintUI(),
+                  builder: (context) => PDFCreator(),
                 ),
               );
             },

@@ -1,70 +1,65 @@
-import 'dart:io';
-
-import 'package:downloads_path_provider/downloads_path_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:pdf/widgets.dart' as pw;
+import 'package:flutter_poc/pdfcreate/pdfreport.dart';
 
-import 'package:flutter/services.dart';
-import 'package:flutter_poc/CSS/textcss.dart';
-import 'package:flutter_poc/responsivescreen/responsive.dart';
-
-class PDFPrintUI extends StatefulWidget {
+class PDFCreator extends StatefulWidget {
   @override
-  _PDFPrintUIState createState() => _PDFPrintUIState();
+  _PDFCreatorState createState() => _PDFCreatorState();
 }
 
-class _PDFPrintUIState extends State<PDFPrintUI> {
+class _PDFCreatorState extends State<PDFCreator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PDF Example'),
+        title: Text("Create PDF File"),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Hello World!'),
-          RaisedButton(
-            child: Text("Create PDF"),
-            onPressed: () {
-              _openFileExplorer();
-            },
-          )
-        ],
-      ),
-    );
-  }
+      body: Center(
+        child: Column(
+          children: [
+            Center(
+              child: Text("PDF Demo"),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 30),
+              height: 40,
+              child: RaisedButton(
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(5.0),
+                ),
+                child: Text(
+                  'Create Single Page PDF and Display File',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+                color: Colors.blue,
+                onPressed: () {
+                  reportViewSinglePage(context);
+                },
+              ),
+            ),
 
-  Future<void> _openFileExplorer() async {
-    final doc = pw.Document();
 
-    doc.addPage(
-      pw.Page(
-        build: (pw.Context context) => pw.Center(
-          child: pw.Text('Hello World!'),
+            Container(
+              margin: EdgeInsets.only(top: 30),
+              height: 40,
+              child: RaisedButton(
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(5.0),
+                ),
+                child: Text(
+                  'Create Multiple Page PDF and Display File',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+                color: Colors.blue,
+                onPressed: () {
+                  reportViewMultiplePage(context);
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
-
-    Future<Directory> downloadsDirectory =
-        DownloadsPathProvider.downloadsDirectory;
-    Directory _downloadsDirectory =
-        await DownloadsPathProvider.downloadsDirectory;
-    String dir;
-    if (Platform.isIOS) {
-      dir = (await getApplicationDocumentsDirectory()).absolute.path;
-    } else {
-      dir = _downloadsDirectory.path;
-    }
-    final String path = '$dir/example.pdf';
-    print(path);
-    final File file = File(path);
-    List<String> basename = path.split("/");
-    int len = basename.length;
-    String fileName = basename[len - 2] + "/" + basename[len - 1];
-    await file.writeAsBytes(doc.save());
-    doc.save();
   }
 }
