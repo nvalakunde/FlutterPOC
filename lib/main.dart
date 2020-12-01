@@ -12,12 +12,12 @@ import 'package:flutter_poc/carosal/formui.dart';
 import 'package:flutter_poc/cascadedropdown/cascadeui.dart';
 import 'package:flutter_poc/colorchoose/colorchooseui.dart';
 import 'package:flutter_poc/datetimecal.dart/datepicker.dart';
+import 'package:flutter_poc/dynamicFields/fechDyanamic.dart';
 import 'package:flutter_poc/input.dart/fileattach.dart';
 import 'package:flutter_poc/input.dart/input.dart';
 import 'package:flutter_poc/loginsignup/loginsignup.dart';
 import 'package:flutter_poc/media/imageoperation.dart';
 import 'package:flutter_poc/navigation/navigatanimation.dart';
-import 'package:flutter_poc/pdfcreate/createpdf.dart';
 import 'package:flutter_poc/pdfcreate/pdrwriter.dart';
 import 'package:flutter_poc/qrcoder/qrscanner.dart';
 import 'package:flutter_poc/repeatwidgets.dart/gridUI.dart';
@@ -385,7 +385,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Text('ImagePickerUI'),
               ),
-              
             ],
           ),
 
@@ -472,18 +471,30 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-RaisedButton(
-                color: themeColorYellow,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Login(),
-                    ),
-                  );
-                },
-                child: Text('LoginSignup UI'),
-              ),
+          RaisedButton(
+            color: themeColorYellow,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FetchDyanamicUI(),
+                ),
+              );
+            },
+            child: Text('Dynamic Fields'),
+          ),
+          RaisedButton(
+            color: themeColorYellow,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Login(),
+                ),
+              );
+            },
+            child: Text('LoginSignup UI'),
+          ),
           RaisedButton(
             color: themeColorYellow,
             onPressed: () {

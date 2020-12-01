@@ -403,11 +403,12 @@ class _MyHomePageState extends State<Login>
                       ),
                     ],
                     gradient: new LinearGradient(
-                        colors: [gradient_linear1, gradient_linear2],
-                        begin: const FractionalOffset(0.2, 0.2),
-                        end: const FractionalOffset(1.0, 1.0),
-                        stops: [0.0, 1.0],
-                        tileMode: TileMode.clamp),
+                      colors: [gradient_linear1, gradient_linear2],
+                      begin: const FractionalOffset(0.2, 0.2),
+                      end: const FractionalOffset(1.0, 1.0),
+                      stops: [0.0, 1.0],
+                      tileMode: TileMode.clamp
+                    ),
                   ),
                   child: MaterialButton(
                       highlightColor: Colors.transparent,
@@ -435,13 +436,12 @@ class _MyHomePageState extends State<Login>
                         _validateInputs();
                         String mystatus;
                         if (_autoValidate) {
-                          
-                                scaffoldKey.currentState.showSnackBar(
-                                  SnackBar(
-                                    content: Text(mystatus),
-                                    duration: Duration(seconds: 3),
-                                  ),
-                                );
+                          scaffoldKey.currentState.showSnackBar(
+                            SnackBar(
+                              content: Text(mystatus),
+                              duration: Duration(seconds: 3),
+                            ),
+                          );
                         }
                       })),
             ],
@@ -545,11 +545,12 @@ class _MyHomePageState extends State<Login>
                           ),
                         ],
                         gradient: new LinearGradient(
-                            colors: [gradient_linear1, gradient_linear2],
-                            begin: const FractionalOffset(0.2, 0.2),
-                            end: const FractionalOffset(1.0, 1.0),
-                            stops: [0.0, 1.0],
-                            tileMode: TileMode.clamp),
+                          colors: [gradient_linear1, gradient_linear2],
+                          begin: const FractionalOffset(0.2, 0.2),
+                          end: const FractionalOffset(1.0, 1.0),
+                          stops: [0.0, 1.0],
+                          tileMode: TileMode.clamp
+                        ),
                       ),
                       child: MaterialButton(
                         highlightColor: Colors.transparent,
@@ -571,7 +572,6 @@ class _MyHomePageState extends State<Login>
                         ),
                         onPressed: () {
                           _validateInputsparent();
-                          
                         },
                       ),
                     ),
