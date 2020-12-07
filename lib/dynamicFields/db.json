@@ -1,0 +1,172 @@
+//Dummy Data
+{
+    "fields": [
+        {
+            "fieldName": "FirstName",
+            "limit": 20,
+            "value": "Nandakishor",
+            "isShow": true,
+            "isApplicable": true,
+            "inputType": "text",
+            "isMandatory": true,
+            "feildType": "text"
+        },
+        {
+            "fieldName": "MiddleName",
+            "limit": 20,
+            "value": "Dhanaji",
+            "isShow": true,
+            "isApplicable": false,
+            "inputType": "text",
+            "isMandatory": false,
+            "feildType": "text"
+        },
+        {
+            "fieldName": "LastName",
+            "limit": 20,
+            "value": "Valakunde",
+            "isShow": true,
+            "isApplicable": false,
+            "inputType": "text",
+            "isMandatory": true,
+            "feildType": "text"
+        },
+        {
+            "fieldName": "FullName",
+            "limit": 50,
+            "value": "Nandakishor Dhanaji Valakunde",
+            "isShow": false,
+            "isApplicable": true,
+            "inputType": "text",
+            "isMandatory": true,
+            "feildType": "text"
+        },
+        {
+            "fieldName": "Age",
+            "value": 0,
+            "isShow": true,
+            "isApplicable": true,
+            "isMandatory": true,
+            "inputType": "number",
+            "feildType": "text"
+        },
+        {
+            "fieldName": "Phone",
+            "value": 9456789102,
+            "limit": 10,
+            "isShow": true,
+            "isApplicable": true,
+            "isMandatory": true,
+            "inputType": "number",
+            "feildType": "text"
+        },
+        {
+            "fieldName": "Email",
+            "value": "abc@gmail.com",
+            "limit": 20,
+            "isShow": true,
+            "isApplicable": true,
+            "isMandatory": true,
+            "inputType": "email",
+            "feildType": "text"
+        },
+        {
+            "fieldName": "Gender",
+            "value": "",
+            "limit": 20,
+            "isShow": true,
+            "isApplicable": true,
+            "isMandatory": true,
+            "inputType": "text",
+            "feildType": "radio",
+            "listData": [
+                {
+                    "name": "Male",
+                    "selected": true
+                },
+                {
+                    "name": "Female",
+                    "selected": false
+                }
+            ]
+        },
+        {
+            "fieldName": "Education",
+            "value": "",
+            "limit": 20,
+            "isShow": true,
+            "isApplicable": true,
+            "isMandatory": true,
+            "inputType": "text",
+            "feildType": "checkbox",
+            "listData": [
+                {
+                    "name": "SSC",
+                    "selected": true
+                },
+                {
+                    "name": "HSC",
+                    "selected": false
+                },
+                {
+                    "name": "BE",
+                    "selected": false
+                },
+                {
+                    "name": "MTech",
+                    "selected": false
+                }
+            ]
+        },
+        {
+            "fieldName": "Education Dropdown",
+            "value": "",
+            "limit": 20,
+            "isShow": true,
+            "isApplicable": true,
+            "isMandatory": true,
+            "inputType": "text",
+            "feildType": "checkbox",
+            "listData": [
+                {
+                    "name": "SSC",
+                    "selected": true
+                },
+                {
+                    "name": "HSC",
+                    "selected": false
+                },
+                {
+                    "name": "BE",
+                    "selected": false
+                },
+                {
+                    "name": "MTech",
+                    "selected": false
+                }
+            ]
+        },
+        {
+            "fieldName": "Date of Birth",
+            "value": "",
+            "limit": 20,
+            "isShow": true,
+            "isApplicable": true,
+            "isMandatory": true,
+            "inputType": "date",
+            "feildType": "date"
+        },
+        {
+            "fieldName": "Address Proof",
+            "value": "",
+            "fileName": "aadhar.pdf",
+            "filePath": "",
+            "limit": 20,
+            "isShow": true,
+            "isApplicable": true,
+            "isMandatory": true,
+            "inputType": "text",
+            "feildType": "file"
+        }
+    ]
+}
