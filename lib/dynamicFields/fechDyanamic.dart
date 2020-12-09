@@ -71,14 +71,16 @@ class _FetchDyanamicUIsState extends State<FetchDyanamicUI> {
 
   fetchDyanamicData() async {
     dynamicFieldList = [];
-    String url = "http://10.0.2.2:3000/fields";
+    String url =
+        "https://emportalapitest.azurewebsites.net/api/SelfServeReport/FlutterDemo?access_token=Flutter_test";
+    // String url = "http://10.0.2.2:3000/fields";
 
     print("url : " + url);
     var response = await http.get(url, headers: {"Accept": "application/json"});
     print(response.body);
-    var data = json.decode(response.body) as List;
+    var data = json.decode(response.body);
     DynamicField dynamicField;
-    for (var eachField in data) {
+    for (var eachField in data['fields']) {
       dynamicField = DynamicField.fromJson(eachField);
       dynamicFieldList.add(dynamicField);
     }
