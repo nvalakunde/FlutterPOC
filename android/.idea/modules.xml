@@ -2,23 +2,25 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" group="android" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="android/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/512555772/audioplayers.iml" filepath="$PROJECT_DIR$/.idea/modules/512555772/audioplayers.iml" group="android/audioplayers" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1752782832/cloud_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/1752782832/cloud_firestore.iml" group="android/cloud_firestore" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-696840348/downloads_path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/-696840348/downloads_path_provider.iml" group="android/downloads_path_provider" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1496423963/file_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1496423963/file_picker.iml" group="android/file_picker" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1904863052/firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/1904863052/firebase_core.iml" group="android/firebase_core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/791574230/flutter_audio_recorder.iml" filepath="$PROJECT_DIR$/.idea/modules/791574230/flutter_audio_recorder.iml" group="android/flutter_audio_recorder" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-221300865/flutter_full_pdf_viewer.iml" filepath="$PROJECT_DIR$/.idea/modules/-221300865/flutter_full_pdf_viewer.iml" group="android/flutter_full_pdf_viewer" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1961635268/flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/-1961635268/flutter_plugin_android_lifecycle.iml" group="android/flutter_plugin_android_lifecycle" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1255785169/flutter_webview_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/-1255785169/flutter_webview_plugin.iml" group="android/flutter_webview_plugin" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/589888535/gallery_saver.iml" filepath="$PROJECT_DIR$/.idea/modules/589888535/gallery_saver.iml" group="android/gallery_saver" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-12212758/image_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-12212758/image_picker.iml" group="android/image_picker" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1109353625/path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/1109353625/path_provider.iml" group="android/path_provider" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1591149348/qr_code_scanner.iml" filepath="$PROJECT_DIR$/.idea/modules/-1591149348/qr_code_scanner.iml" group="android/qr_code_scanner" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1467381708/shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/1467381708/shared_preferences.iml" group="android/shared_preferences" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/204665344/url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/204665344/url_launcher.iml" group="android/url_launcher" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1011630135/android.audioplayers.iml" filepath="$PROJECT_DIR$/.idea/modules/1011630135/android.audioplayers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/500352213/android.cloud_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/500352213/android.cloud_firestore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/106514143/android.downloads_path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/106514143/android.downloads_path_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1552136672/android.file_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/1552136672/android.file_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1891029881/android.firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/-1891029881/android.firebase_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/817488891/android.flutter_audio_recorder.iml" filepath="$PROJECT_DIR$/.idea/modules/817488891/android.flutter_audio_recorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/582053626/android.flutter_full_pdf_viewer.iml" filepath="$PROJECT_DIR$/.idea/modules/582053626/android.flutter_full_pdf_viewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1958685687/android.flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/1958685687/android.flutter_plugin_android_lifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-452430678/android.flutter_webview_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/-452430678/android.flutter_webview_plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1088962898/android.gallery_saver.iml" filepath="$PROJECT_DIR$/.idea/modules/1088962898/android.gallery_saver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1438087067/android.image_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1438087067/android.image_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2139126745/android.path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/2139126745/android.path_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1156998227/android.permission_handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-1156998227/android.permission_handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1451387329/android.qr_code_scanner.iml" filepath="$PROJECT_DIR$/.idea/modules/1451387329/android.qr_code_scanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/687711431/android.shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/687711431/android.shared_preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/583538569/android.sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/583538569/android.sqflite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/220764517/android.url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/220764517/android.url_launcher.iml" />
     </modules>
   </component>
 </project>

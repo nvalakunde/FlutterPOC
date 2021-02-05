@@ -3,6 +3,9 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e11f6d99ce37d2e5af0a4ef4499acfd9/jetified-firebase-firestore-21.7.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e11f6d99ce37d2e5af0a4ef4499acfd9/jetified-firebase-firestore-21.7.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3a2502accf337f3c96bc9dd881b20273/jetified-firebase-firestore-21.7.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3a2502accf337f3c96bc9dd881b20273/jetified-firebase-firestore-21.7.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3a2502accf337f3c96bc9dd881b20273/jetified-firebase-firestore-21.7.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-firestore/21.7.1/bd602b8c29c3813f4d0342b9847e24a68e96bd49/firebase-firestore-21.7.1-javadoc.jar!/" />
