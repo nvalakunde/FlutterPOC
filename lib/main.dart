@@ -32,6 +32,7 @@ import 'package:flutter_poc/tabledata/tableui.dart';
 import 'package:flutter_poc/taskmanagement/screens/taskDashboard.dart';
 import 'package:flutter_poc/utils/constantData.dart';
 import 'package:flutter_poc/webviewpage.dart/webviewscreen.dart';
+import 'package:flutter_poc/xmlparsing/xmlexample.dart';
 
 void main() {
   runApp(MyApp());
@@ -482,6 +483,24 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
             child: Text('Dynamic Fields'),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: RaisedButton(
+              color: themeColorBlue,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => XMLExampleUI(),
+                  ),
+                );
+              },
+              child: Text(
+                'XML Examle',
+                style: txtStyle(13, whiteColor),
+              ),
+            ),
           ),
           RaisedButton(
             color: themeColorYellow,
